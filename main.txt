@@ -1,0 +1,134 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 10} 
+\author{Kummitha Jhanavi (CS21BTECH11032)}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+
+
+
+% Blocks frame
+\section{Question}
+\begin{frame}{Question}
+    \begin{block}
+       
+       (a) Bernoulli trails : Using (7.52) We shall rederive the fundamental equation (3.13). We define the random variables $x_{i}$ = 1 if heads shows at the ith trial and $x_{i}$ =0 otherwise.
+       
+       (b) Poisson theorem : We shall show that if p\ll 1, then
+       
+       P(x=k) \backsimeq \frac{e^{-np}(np)^k}{k!}
+       \end{block}
+\end{frame} 
+\section{Equations}
+\begin{frame}{Equations}
+\begin{block}
+
+   equation 7.52 
+   
+   \phi_{z}(\omega) = E(e^{jw(x_{1}+.....x_{n})}) =\phi_{1}(\omega).....\phi_{\pi}(\omega)
+   
+   equation 3.13
+   
+   Fundamental Theorem:
+   
+  $p_{n}(k)$ =P(A occurs k times in any order) = \begin{pmatrix}n\\k
+                                                \end{pmatrix}p^{k}q^{n-k}
+\end{block}
+    
+\end{frame}
+\section{Solution}
+\begin{frame}{Solution}
+    
+\begin{block}
+   
+   (a): \begin{equation}
+       P(x_{i} =1) = P(h) =p
+   \end{equation}
+   \begin{equation}
+       P(x_{i}= 0) =P(t) =q
+   \end{equation}
+   \begin{equation}
+       \phi_{z}(\omega) = pe^{jw} +q
+   \end{equation}
+   
+   The random variables z=$x_{1}$+.....+$x_{n}$ takes the values 0,1,......,n and (z=k) is the event (k heads in n tossing). Furthermore,
+  \begin{equation}
+      \phi_{z}(\omega) =E(e^{jwk}) =\sum\limits_{k=0}^{n}P(z=k)e^{jkw}
+  \end{equation}
+   The random variables $x_{i}$ are independent because $x_{i}$ depends only on the outcomes of the ith trial and the trials are independent . Hence 
+   \end{block}
+   \end{frame}
+   \begin{frame}
+       \begin{equation}
+           \phi_{z}(\omega) = (pe^{jw}+q)^{n} =\sum\limits_{k=0}^{n} \begin{pmatrix}n\\k
+           \end{pmatrix}p^{k}e^{jkw}q^{n-k}
+       \end{equation}
+       concludes,
+       
+       P(z=k) = P(k heads) = \begin{pmatrix}n\\k
+       \end{pmatrix}p^{k}q^{n-k}
+   \end{frame}
+   \begin{frame}
+   
+   (b): 
+   
+   Suppose that the random variables $x_{i}$ are independent and each takes the value 1 and 0 with respective probabilities $p_{i}$ and $q_{i}$ = 1-p_{i}. If p_{i}\ll 1, then,
+   
+   \begin{equation}
+       e^{p_{i}(e^{jw}-1)}\simeq 1+ p_{i}(e^{jw}-1) = p_{i}e^{jw} +q_{i} = \phi_{i}(\omega)
+   \end{equation}
+   
+   With z=$x_{1}$+.....+&x_{n}&, it follows that
+   
+   \begin{equation}
+       \phi_{z}(\omega) \simeq e^{p_{i}(e^{jw}-1}....e^{p_{n}(e^{jw}-1} = e^{a(e^{jw}-1)}
+   \end{equation}
+   Where a = $p_{1}$+.....+$p_{n}$. This leads to the conclusion that the random variables z is approximately Poisson distributed with parameter a , It can be shows that the result is exact in the limit if
+   
+   $p_{i}$ \rightarrow 0
+   and 
+   
+  $p_{1}$ +.....$p_{n}$ \rightarrow a 
+  
+  as n \rightarrow \infty
+       
+   \end{frame}
+       
+   
+   
+   
+   \end{document}
